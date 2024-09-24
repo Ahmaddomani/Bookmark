@@ -1,0 +1,124 @@
+@import "../Varibles/Varibles";
+@import "../mixins/mixins";
+@import "../PlaceHolders/placeholders";
+
+.features {
+  header {
+    .Section-title {
+      text-align: center;
+      p {
+        max-width: 540px;
+        margin: auto;
+        margin-top: 20px;
+      }
+    }
+  }
+  ul.changers-buttons {
+    @include breakPoint(mobile) {
+      flex-direction: column;
+      margin-top: 30px;
+    }
+    width: fit-content;
+    margin: auto;
+    margin-top: 60px;
+    li {
+      padding: 0 30px 15px;
+      min-width: fit-content;
+      border-bottom: 2px solid #eee;
+      cursor: pointer;
+      transition: 0.3s;
+      &.active {
+        border-bottom-color: $Sof-Red;
+      }
+      &:hover {
+        color: $Sof-Red;
+      }
+      @include breakPoint(mobile) {
+        padding: 20px;
+        text-align: center;
+        border-top: 2px solid #eee;
+      }
+    }
+  }
+  .main-content {
+    @media (max-width: 992px) {
+      flex-direction: column;
+      text-align: center;
+      > div {
+        width: 100%;
+      }
+    }
+    margin-top: 60px;
+    gap: 35px;
+    .section-info {
+      max-width: 600px;
+      @media (max-width: 992px) {
+        min-width: 100%;
+        text-align: center;
+      }
+      .Section-title {
+        max-width: 500px;
+        text-align: start;
+        @media (max-width: 992px) {
+          min-height: fit-content;
+          text-align: center;
+          margin: auto;
+        }
+      }
+      padding: 60px;
+      padding-right: 0;
+      @media (max-width: 550px) {
+        padding: 0;
+        padding-top: 50px;
+      }
+      Button.more-info {
+        @include Button(fit-content, white, $Soft-Blue);
+        margin-top: 12px;
+        transition: $main-transiton;
+        &:hover {
+          @extend %blue-button;
+        }
+      }
+    }
+    .img-container {
+      min-width: 536px;
+      height: 402px;
+      @include breakPoint(mobile) {
+        width: inherit;
+        height: inherit;
+      }
+      @media (max-width: 992px) {
+        min-width: 100%;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 555px;
+        height: 350px;
+        background-color: #5368df;
+        border-bottom-right-radius: 150px;
+        left: -20%;
+        top: 23%;
+        z-index: -1;
+        @include breakPoint(mobile) {
+          width: 100%;
+          height: 88%;
+        }
+        @media (max-width: 992px) {
+          height: 335px;
+        }
+        @media (max-width: 550px) {
+          height: 270px;
+        }
+        @media (max-width: 400px) {
+          height: 200px;
+        }
+      }
+      img {
+        @include breakPoint(mobile) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

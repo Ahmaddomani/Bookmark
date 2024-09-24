@@ -1,0 +1,66 @@
+@import "../Varibles/Varibles";
+.questions {
+  padding: 85px;
+  @include breakPoint(mobile) {
+    padding: 45px;
+  }
+  .Section-title {
+    text-align: center;
+    p {
+      @include breakPoint(medium) {
+        width: 540px;
+      }
+      @include breakPoint(large) {
+        width: 540px;
+      }
+      margin: auto;
+      margin-top: 16px;
+    }
+  }
+  .QandA {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 40px;
+    .question-container {
+      &:first-child {
+        border-top: 2px solid #eee;
+      }
+      padding: 15px 12px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #eee;
+      h5 {
+        margin-bottom: 0;
+        color: $Very-Dark-Blue;
+        cursor: pointer;
+        transition: $main-transiton;
+        flex: 1;
+        &:hover {
+          color: $Sof-Red;
+        }
+      }
+      img {
+        object-fit: contain;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+    }
+    .Qas-container {
+      overflow: hidden;
+    }
+    p.Answer {
+      color: $Grayish-Blue;
+      margin-top: 25px;
+      display: none;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+  }
+  .more-info {
+    @include Button(fit-content, white, $Soft-Blue);
+    @extend %blue-button;
+    margin: auto;
+    margin-top: 30px;
+    display: block;
+  }
+}

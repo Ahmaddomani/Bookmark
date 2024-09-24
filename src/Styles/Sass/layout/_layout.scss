@@ -1,0 +1,57 @@
+@import "../Varibles/Varibles";
+
+body {
+  font-size: 18px;
+  font-family: "Rubik", monospace;
+}
+*::selection {
+  background-color: $Soft-Blue;
+  color: white;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.show {
+  display: block !important;
+}
+.translate {
+  src: url("") !important ;
+  transform: rotate(180deg);
+}
+
+/* Customizing the scroll bar for WebKit browsers */
+::-webkit-scrollbar {
+  width: 16px; /* Width of the scrollbar */
+}
+
+/* The track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+}
+
+/* The scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    45deg,
+    $Soft-Blue,
+    $Sof-Red
+  ); /* Linear gradient */
+  border-radius: 10px;
+}
+
+/* Optional: Styling on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    45deg,
+    $Sof-Red,
+    $Soft-Blue
+  ); /* Reverse gradient on hover */
+}
+
+.section {
+  opacity: 0;
+}

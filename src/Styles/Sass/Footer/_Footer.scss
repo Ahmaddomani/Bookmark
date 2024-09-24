@@ -1,0 +1,69 @@
+@import "../Varibles/Varibles";
+@import "../mixins/mixins";
+footer {
+  @include breakPoint(mobile) {
+    flex-direction: column;
+  }
+  background-color: $Very-Dark-Blue;
+  padding: 20px;
+  align-items: center;
+  .Logo-links {
+    img.logo {
+      object-fit: contain;
+      @include breakPoint(mobile) {
+        margin-bottom: 20px;
+      }
+    }
+    margin-inline-start: 100px;
+    @include breakPoint(small) {
+      margin-inline-start: 35px;
+    }
+    @include breakPoint(mobile) {
+      flex-direction: column;
+      margin: 0;
+    }
+  }
+  ul {
+    margin-inline-start: 30px;
+    @include breakPoint(mobile) {
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+    a {
+      display: block;
+      color: white;
+      font-weight: 100;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 16px;
+      transition: $main-transiton;
+      padding: 24px;
+      @include breakPoint(mobile) {
+        padding: 14px !important;
+      }
+      &:hover {
+        color: $Sof-Red;
+      }
+    }
+  }
+  .socail-logos {
+    padding-inline-end: 55px;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    @include breakPoint(mobile) {
+      padding: 0;
+      margin-top: 30px;
+    }
+    img {
+      width: 24px;
+      height: 24px;
+      transition: $main-transiton;
+      cursor: pointer;
+      &.twitter {
+        margin-inline-start: 35px;
+      }
+    }
+  }
+}

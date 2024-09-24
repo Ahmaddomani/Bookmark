@@ -1,0 +1,15 @@
+%blue-button {
+  background-color: $Soft-Blue;
+  border-color: $Soft-Blue;
+  color: white;
+  background-color: #fff;
+  &:hover {
+    color: $Soft-Blue;
+  }
+}
+
+%absoluteTopLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

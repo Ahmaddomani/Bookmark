@@ -1,0 +1,98 @@
+@import "../Varibles/Varibles";
+@import "../mixins/mixins";
+.contact {
+  padding: 50px;
+  background-color: $Soft-Blue;
+  color: white;
+  span.title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+  }
+  p {
+    font-size: 30px;
+    max-width: 400px;
+    margin: auto;
+  }
+  form {
+    @include breakPoint(mobile) {
+      height: fit-content;
+      flex-wrap: wrap;
+    }
+    position: relative;
+    max-width: 400px;
+    margin: auto;
+    height: 50px;
+    justify-content: space-between;
+    gap: 20px;
+    span.error {
+      @include breakPoint(mobile) {
+        width: 100%;
+        bottom: 43px;
+      }
+      position: absolute;
+      left: 0;
+      bottom: -30px;
+      background-color: #fa5757;
+      color: white;
+      border-radius: 6px;
+      padding: 7px;
+      font-size: 13px;
+      width: 66%;
+      text-align: start;
+      z-index: 1;
+      padding: 6px;
+      padding-top: 20px;
+      display: none;
+    }
+    img.iconError {
+      @include breakPoint(mobile) {
+        top: 25px;
+        right: 10px;
+      }
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 36%;
+      display: none;
+    }
+    input {
+      @include breakPoint(mobile) {
+        width: 100%;
+        padding: 10px;
+      }
+      position: relative;
+      z-index: 3;
+      outline: none;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      width: 66%;
+      padding-inline-start: 20px;
+      &::placeholder {
+        font-size: 15px;
+        color: #ccc;
+      }
+      &:focus {
+        border-color: $Sof-Red;
+      }
+      &:hover {
+        border-color: $Sof-Red;
+      }
+    }
+    button {
+      flex: 1;
+      display: block;
+      width: fit-content;
+      @include Button(fit-content, white, $Sof-Red);
+      &:hover {
+        color: $Sof-Red;
+      }
+      @include breakPoint(mobile) {
+        margin-top: 12px;
+      }
+    }
+  }
+}

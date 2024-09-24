@@ -1,0 +1,54 @@
+@import "../Varibles//Varibles";
+@mixin breakPoint($size) {
+  @if $size == mobile {
+    @media (max-width: 770px) {
+      @content;
+    }
+  } @else if $size == small {
+    @media (min-width: 771px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $size == medium {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $size == large {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin Button($width, $color, $bgc) {
+  transition: $main-transiton;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 14px;
+  color: $color;
+  width: $width;
+  background-color: $bgc;
+  padding: 10px 12px 8px;
+  &:hover {
+    background-color: #fff;
+    border-color: $bgc;
+  }
+}
+
+@mixin Before($diriction) {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    width: 75%;
+    height: 75%;
+    z-index: -1;
+    background-color: $Soft-Blue;
+    @if $diriction == right {
+      right: 0;
+      border-bottom-left-radius: 150px;
+    } @else {
+      left: 20px;
+      border-bottom-right-radius: 150px;
+    }
+  }
+}

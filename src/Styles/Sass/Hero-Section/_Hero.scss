@@ -1,0 +1,64 @@
+@import "../mixins/mixins";
+
+.Hero-Section {
+  @media (max-width: 992px) {
+    flex-direction: column-reverse;
+  }
+  min-height: calc(100vh - 91px);
+  > div {
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+    width: 50%;
+    height: fit-content;
+    h1.title {
+      font-size: 43px;
+      color: $Very-Dark-Blue;
+      font-weight: bold;
+      width: 450px;
+      @media (max-width: 992px) {
+        width: fit-content;
+        text-align: center;
+        margin: auto;
+      }
+    }
+    .p_descriton {
+      width: 480px;
+      margin-top: 20px;
+      margin-right: 0;
+      @media (max-width: 992px) {
+        width: fit-content;
+        text-align: center;
+      }
+    }
+    .Hero-img {
+      width: 100%;
+    }
+  }
+  .info {
+    .buttons {
+      @media (max-width: 992px) {
+        justify-content: center;
+      }
+    }
+    padding: 75px 0;
+    button.blue {
+      @include Button(fit-content, white, $Soft-Blue);
+      &:hover {
+        color: $Soft-Blue;
+        border-color: $Soft-Blue;
+      }
+    }
+    button.white {
+      @include Button(fit-content, $Very-Dark-Blue, #efefef);
+      &:hover {
+        color: $Very-Dark-Blue;
+        border-color: $Very-Dark-Blue;
+      }
+    }
+  }
+  .img-container {
+    @include Before(right);
+    margin-top: 20px;
+  }
+}
